@@ -73,7 +73,96 @@ public class Biblioteca {
                 return livro;
             }
         }
-        return null; // Livro não encontrado
+        return null;
     }
+    public boolean emprestarLivro(String isbnLivro, int registroUsuario) {
+        Livro livro = buscarLivro(isbnLivro);
+        Usuario usuario = buscarUsuario(registroUsuario);
+        if (livro == null) {
+            System.out.println("Erro: Livro com ISBN '" + isbnLivro + "' não encontrado na biblioteca.");
+            return false;
+        }
+        if (usuario == null) {
+            System.out.println("Erro: Usuário com registro '" + registroUsuario + "' não encontrado.");
+            return false;
+        }
+        if (!livro.isDisponivel()) {
+            System.out.println("Erro: Livro '" + livro.getTitulo() + "' já está emprestado.");
+            return false;
+        }
+        if (usuario.possuiLivro(isbnLivro)) {
+            System.out.println("Erro: Usuário '" + usuario.getNome() + "' já possui o livro '" + livro.getTitulo() + "'.");
+            return false;
+        }
+        if (livro.emprestar()) {
+            usuario.addLivrosEmprestados(livro);
+            System.out.println("Sucesso: Livro '" + livro.getTitulo() + "' emprestado para '" + usuario.getNome() + "'.");
+            return true;
+        } else {
+            System.out.println("Erro inesperado ao emprestar o livro.");
+            return false;
+        }
+    }
+    public boolean devolverLivro(String isbnLivro, int registroUsuario) {
+        Livro livro = buscarLivro(isbnLivro);
+        Usuario usuario = buscarUsuario(registroUsuario);
 
+        if (livro == null) {
+            System.out.println("Erro: Livro com ISBN '" + isbnLivro + "' não encontrado na biblioteca.");
+            return false;
+        }
+        if (usuario == null) {
+            System.out.println("Erro: Usuário com registro '" + registroUsuario + "' não encontrado.");
+            return false;
+        }
+        if (!usuario.possuiLivro(isbnLivro)) {
+            System.out.println("Erro: Livro '" + livro.getTitulo() + "' não está emprestado a '" + usuario.getNome() + "'.");
+            return false;
+        }
+        if (livro.isDisponivel()) {
+            System.out.println("Erro: Livro '" + livro.getTitulo() + "' já está disponível (não estava emprestado).");
+            return false;
+        }
+        usuario.removeLivrosEmprestados(isbnLivro);
+        livro.devolver();
+        System.out.println("Sucesso: Livro '" + livro.getTitulo() + "' devolvido por '" + usuario.getNome() + "'.");
+        return true;
+    }
+    public void listarLivrosDisponiveis() {
+        System.out.println("\n--- Livros Disponíveis no Acervo da " + this.nome + " ---");
+        boolean encontrado = false;
+        for (Livro livro : acervo) {
+            if (livro.isDisponivel()) {
+                System.out.println("- Título: " + livro.getTitulo() + ", Autor: " + livro.getAutor() + ", ISBN: " + livro.getIsbn());
+                encontrado = true;
+            }
+        }
+        if (!encontrado) {
+            System.out.println("Nenhum livro disponível no momento.");
+        }
+        System.out.println("----------------------------------------------");
+    }
+    public void listarTodosOsLivros() {
+        System.out.println("\n--- Todos os Livros no Acervo da " + this.nome + " ---");
+        if (acervo.isEmpty()) {
+            System.out.println("O acervo está vazio.");
+            return;
+        }
+        for (Livro livro : acervo) {
+            String status = livro.isDisponivel() ? "Disponível" : "Emprestado";
+            System.out.println("- Título: " + livro.getTitulo() + ", Autor: " + livro.getAutor() + ", ISBN: " + livro.getIsbn() + " (Status: " + status + ")");
+        }
+        System.out.println("----------------------------------------------");
+    }
+    public void listarUsuarios() {
+        System.out.println("\n--- Usuários Cadastrados na " + this.nome + " ---");
+        if (usuarios.isEmpty()) {
+            System.out.println("Nenhum usuário cadastrado.");
+            return;
+        }
+        for (Usuario usuario : usuarios) {
+            System.out.println("- Nome: " + usuario.getNome() + ", Registro: " + usuario.getRegistro());
+        }
+        System.out.println("----------------------------------------------");
+    }
 }
