@@ -35,7 +35,35 @@ public class Biblioteca {
             System.out.println("Livro com ISBN " + livroParaRemover.getTitulo() + " não encontrado");
         }
     }
-
+    public void addUsuario(Usuario usuario){
+        if(usuario != null){
+            if(buscarUsuario(usuario.getRegistro()) == null){
+                this.usuarios.add(usuario);
+                System.out.println("Usuario "+ usuario.getNome() + " adicionado");
+            }else{
+                System.out.println("Usuario " + usuario.getNome() + " já existe");
+            }
+        }else{
+            System.out.println("Não é possível adicionar um usuario nulo");
+        }
+    }
+    public void removeUsuario(int registro){
+        Usuario usuarioParaRemover = buscarUsuario(registro);
+        if(usuarioParaRemover != null){
+            this.usuarios.remove(usuarioParaRemover);
+            System.out.println("Usuario "+ usuarioParaRemover.getNome() + " removido");
+        }else{
+            System.out.println("Usuario "+ registro + " não encontrado");
+        }
+    }
+    public Usuario buscarUsuario(int registro){
+        for(Usuario usuario : this.usuarios){
+            if (usuario.getRegistro() == registro){
+                return usuario;
+            }
+        }
+        return null;
+    }
     public Livro buscarLivro(String isbn) {
         if (isbn == null || isbn.isEmpty()) {
             return null;
