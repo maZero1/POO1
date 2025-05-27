@@ -15,11 +15,9 @@ public class Jogo {
         }
 
     }
-
     public int getQtdJogadores(){
         return this.qtdJogadores;
     }
-
     public boolean setPlataforma(String plataforma) {
         if (!plataforma.isEmpty()) {
             this.plataforma = plataforma;
