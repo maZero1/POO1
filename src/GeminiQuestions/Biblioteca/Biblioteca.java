@@ -1,6 +1,6 @@
 package GeminiQuestions.Biblioteca;
 
-import java.util.List;
+import java.util.*;
 
 public class Biblioteca {
     private String nome;
