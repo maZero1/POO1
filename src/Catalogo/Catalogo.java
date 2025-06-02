@@ -16,10 +16,9 @@ public class Catalogo {
         String texto = "Colecionador: "+this.colecionador+"\n";
         texto += "Itens: \n";
 
-        for(Item it: itens){
-            texto += "Titulo: "+it.getTitulo()+", "+
-                    "Duracao: "+it.getDuracao()+", "+
-                    "Comentario: "+it.getComentario()+"\n";
+        for(Item it: itens) {
+            texto += it.toString();
+            System.out.println();
         }
         return texto;
     }
