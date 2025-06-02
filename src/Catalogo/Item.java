@@ -8,7 +8,6 @@ public class Item {
     public String getTitulo() {
         return this.titulo;
     }
-
     public boolean setTitulo(String titulo) {
         if ( !titulo.isEmpty() ){
             this.titulo = titulo;
@@ -17,11 +16,9 @@ public class Item {
             return false;
         }
     }
-
     public double getDuracao() {
         return this.duracao;
     }
-
     public boolean setDuracao(double duracao) {
         if (duracao >= 0){
             this.duracao = duracao;
@@ -30,11 +27,9 @@ public class Item {
             return false;
         }
     }
-
     public String getComentario() {
         return this.comentario;
     }
-
     public boolean setComentario(String comentario) {
         if (!comentario.isEmpty()){
             this.comentario = comentario;
