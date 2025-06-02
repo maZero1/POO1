@@ -1,9 +1,9 @@
 package Catalogo;
 
 public class Item {
-    private String titulo;
-    private double duracao;
-    private String comentario;
+    public String titulo;
+    public double duracao;
+    public String comentario;
 
     public String getTitulo() {
         return this.titulo;
@@ -37,5 +37,10 @@ public class Item {
         }else{
             return false;
         }
+    }
+    public String toString(){
+        return "Titulo: " + this.titulo +
+                "Duracao: " + this.duracao +
+                "Comentario: " + this.comentario;
     }
 }

@@ -26,4 +26,15 @@ public class Album extends Item{
             return false;
         }
     }
+
+    @Override //Diz que eu quero reemplementar um metodo
+    //o proprio java faz uma teste de certa forma, vendo se faltou
+    //alguma coisa no metodo, mesmo metodo da classe item
+    public String toString(){
+        return "Titulo: " + this.titulo +
+                "Duracao: " + this.duracao +
+                "Comentario: " + this.comentario +
+                "Artista: " + this.artista +
+                "Faixas: " + this.faixas;
+    }
 }
