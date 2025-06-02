@@ -15,4 +15,10 @@ public class Filme extends Item{
             return false;
         }
     }
+    public String toString(){
+        return "Titulo: " + this.titulo +
+                "Duracao: " + this.duracao +
+                "Comentario: " + this.comentario +
+                "Diretor: " + this.diretor;
+    }
 }

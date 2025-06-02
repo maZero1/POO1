@@ -1,7 +1,7 @@
 package Catalogo;
 import java.util.*;
 
-public class Jogo {
+public class Jogo extends Item {
     private int qtdJogadores;
     private String plataforma;
 
