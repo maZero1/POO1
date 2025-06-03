@@ -4,6 +4,12 @@ public class Album extends Item{
     private String artista;
     private int faixas;
 
+    public Album(String titulo, int duracao, String comentario, String artista, int faixas) {
+        super(titulo, duracao, comentario);
+        this.artista = artista;
+        this.faixas = faixas;
+    }
+
     public String getArtista() {
         return artista;
     }
@@ -31,10 +37,6 @@ public class Album extends Item{
     //o proprio java faz uma teste de certa forma, vendo se faltou
     //alguma coisa no metodo, mesmo metodo da classe item
     public String toString(){
-        return "Titulo: " + this.titulo +
-                "Duracao: " + this.duracao +
-                "Comentario: " + this.comentario +
-                "Artista: " + this.artista +
-                "Faixas: " + this.faixas;
+        return super.toString() + ", Artista: " + this.artista + ", Faixas: " + this.faixas;
     }
 }

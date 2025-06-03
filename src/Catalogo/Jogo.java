@@ -5,6 +5,11 @@ public class Jogo extends Item {
     private int qtdJogadores;
     private String plataforma;
 
+    public Jogo(String titulo, int duracao, String comentario, int qtdJogadores, String plataforma) {
+        super(titulo, duracao, comentario);
+        this.qtdJogadores = qtdJogadores;
+        this.plataforma = plataforma;
+    }
 
     public boolean setQtdJogadores(int jogadores){
         if (jogadores >= 0 ){
@@ -13,7 +18,6 @@ public class Jogo extends Item {
         }else{
             return false;
         }
-
     }
     public int getQtdJogadores(){
         return this.qtdJogadores;
@@ -25,5 +29,9 @@ public class Jogo extends Item {
         } else {
             return false;
         }
+    }
+    public String toString(){
+        return super.toString() + ", Quantidade de Jogadores : "
+                +this.qtdJogadores + ", Plataforma: " + this.plataforma;
     }
 }

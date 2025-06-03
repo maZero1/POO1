@@ -2,8 +2,14 @@ package Catalogo;
 
 public class Item {
     public String titulo;
-    public double duracao;
+    public int duracao;
     public String comentario;
+
+    public Item(String titulo, int duracao, String comentario){
+        this.titulo = titulo;
+        this.duracao = duracao;
+        this.comentario = comentario;
+    }
 
     public String getTitulo() {
         return this.titulo;
@@ -19,7 +25,7 @@ public class Item {
     public double getDuracao() {
         return this.duracao;
     }
-    public boolean setDuracao(double duracao) {
+    public boolean setDuracao(int duracao) {
         if (duracao >= 0){
             this.duracao = duracao;
             return true;
@@ -39,8 +45,8 @@ public class Item {
         }
     }
     public String toString(){
-        return "Titulo: " + this.titulo +
-                "Duracao: " + this.duracao +
-                "Comentario: " + this.comentario;
+        return "Titulo : " + this.titulo +
+                ", Duracao: " + this.duracao +
+                ", Comentario: " + this.comentario;
     }
 }

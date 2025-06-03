@@ -3,6 +3,11 @@ package Catalogo;
 public class Filme extends Item{
     private String diretor;
 
+    public Filme(String titulo, int duracao, String comentario, String diretor){
+        super(titulo, duracao, comentario);
+        this.diretor = diretor;
+    }
+
     public String getDiretor() {
         return diretor;
     }
@@ -16,9 +21,6 @@ public class Filme extends Item{
         }
     }
     public String toString(){
-        return "Titulo: " + this.titulo +
-                "Duracao: " + this.duracao +
-                "Comentario: " + this.comentario +
-                "Diretor: " + this.diretor;
+        return super.toString()+ ", Diretor: " + this.diretor;
     }
 }

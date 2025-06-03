@@ -12,6 +12,9 @@ public class Catalogo {
     public void addItem(Item umItem){
         this.itens.add(umItem);
     }
+    public ArrayList<Item> getItens(){
+        return this.itens;
+    }
     public String toString(){
         String texto = "Colecionador: "+this.colecionador+"\n";
         texto += "Itens: \n";
