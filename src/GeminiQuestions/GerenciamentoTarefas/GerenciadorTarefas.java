@@ -1,4 +1,4 @@
 package GeminiQuestions.GerenciamentoTarefas;
 
-public class Usuario {
+public class GerenciadorTarefas {
 }
