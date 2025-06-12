@@ -42,7 +42,7 @@ public class Tarefa {
             System.out.println("Status nulo ou inválido");
         }
     }
-    public void setResponsavel(Usuario responsavel){
-        if(!responsavel)
+    public void setResponsavel(Usuario responsavel) {
+        //Faltou a verificação do metodo
     }
 }
