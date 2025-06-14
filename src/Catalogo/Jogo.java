@@ -31,7 +31,7 @@ public class Jogo extends Item {
         }
     }
     public String toString(){
-        return super.toString() + ", Quantidade de Jogadores : "
+        return super.toString() + ", Quantidade de Jogadores: "
                 +this.qtdJogadores + ", Plataforma: " + this.plataforma;
     }
 }
