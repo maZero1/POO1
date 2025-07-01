@@ -1,6 +1,6 @@
 package FolhaPagamento;
 
-public class FuncionarioHorista {
+public class FuncionarioHorista extends Funcionario{
 
     private int horasTrabalhadas;
     private double valorHora;
@@ -15,19 +15,19 @@ public class FuncionarioHorista {
         if (horasTrabalhadas > 0 && horasTrabalhadas < 220){
             this.horasTrabalhadas = horasTrabalhadas;
             return true;
+        }else{
+            return false;
         }
-        return false;
     }
     public boolean setValorHora(double valorHora){
         if (valorHora > 0){
             this.valorHora = valorHora;
             return true;
+        }else{
+            return false;
         }
-        return false;
     }
     public double calculoSalario(){
-        double salario;
-        salario = getHorasTrabalhadas() + getValorHora();
-        return salario;
+        return getHorasTrabalhadas()* getValorHora();
     }
 }
