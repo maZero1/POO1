@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 
 public class BancoTeste {
     @Test
@@ -18,16 +16,21 @@ public class BancoTeste {
         banco1.addAgencia(ag2);
         banco1.addAgencia(ag3);
 
-        ArrayList<Agencia> agBanco1 = banco1.getAgencias();
-        assertEquals(3, agBanco1.size());
-        assertEquals(ag1, agBanco1.get(0));
-        assertEquals(ag2, agBanco1.get(1));
-        assertEquals(ag3, agBanco1.get(2));
-
-
+        ArrayList<Agencia> agencias = banco1.getAgencias();
+        assertEquals(3, agencias.size());
+        assertEquals(ag1, banco1.getAgencia(0));
+        assertEquals(ag2, banco1.getAgencia(1));
+        assertEquals(ag3, banco1.getAgencia(2));
+    }
+    @Test
+    public void testeBanco2(){
+        Banco banco2 = new Banco(456, "Banco Cooperativa");
+        Agencia ag1 = new Agencia(1234, "Rio do Sul", 1982);
+        Agencia ag2 = new Agencia(5678, "Blumenau", 2000);
+        Agencia ag3 = new Agencia(8594, "Santo Amaro", 1996);
+        banco2.addAgencia(ag1);
+        banco2.addAgencia(ag2);
+        banco2.addAgencia(ag3);
 
     }
-    Banco banco2 = new Banco(456, "Banco Cooperativa");
-    Agencia ag4 = new Agencia(1234, "Rio do Sul", 1982);
-    Agencia ag5 = new Agencia(5678, "Blumenau", 2000);
 }

@@ -10,6 +10,7 @@ public class Banco {
     public Banco(int id, String nome){
         this.id = id;
         this.nome = nome;
+        this.agencias =  new ArrayList<>();;
     }
     public void addAgencia(Agencia umaAgencia){
         this.agencias.add(umaAgencia);

@@ -4,6 +4,10 @@ public class FuncionarioComissionado extends Funcionario{
     private int totalVendas;
     private double percentualComissao;
 
+    public FuncionarioComissionado(double salarioBase) {
+        super(salarioBase);
+    }
+
     public int getTotalVendas(){
         return this.totalVendas;
     }
@@ -28,5 +32,15 @@ public class FuncionarioComissionado extends Funcionario{
     }
     public double calculaSalario(){
         return getTotalVendas()*getPercentualComissao();
+    }
+
+    @Override
+    public double calcularSalario() {
+        return 0;
+    }
+
+    @Override
+    public void getTipo() {
+
     }
 }
