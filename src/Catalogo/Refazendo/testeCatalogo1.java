@@ -1,12 +1,10 @@
 package Catalogo.Refazendo;
 
 import org.junit.Test;
-
 import java.util.ArrayList;
-
 import static org.junit.Assert.assertEquals;
 
-public class testeCatalogo {
+public class testeCatalogo1 {
     @Test
     public void caso1(){
         Catalogo cat1 = new Catalogo("Matheus");
@@ -28,5 +26,14 @@ public class testeCatalogo {
         ArrayList<Item> itens = cat2.getItens();
         assertEquals("Titulo: Blade, Duração: 90.0, Comentario: Muito bom, Diretor: BigJeff", fil1.toString());
         assertEquals("Titulo: Ghost, Duração: 100.0, Comentario: Muito bom, N° Jogadores: 4, Plataforma: Ps5", jg1.toString());
+    }
+    @Test
+    public void caso3(){
+        Catalogo cat2 = new Catalogo("Marlon");
+        Filme fil1 = new Filme("Blade", -90, "Muito bom", "BigJeff");
+        Jogo jg1 = new Jogo(" ", 100, "Muito bom", 4, "Ps5");
+        cat2.addItens(fil1);
+        cat2.addItens(jg1);
+        assertEquals("Titulo: Blade, Duração: null, Comentario: Muito bom, Diretor: BigJeff", fil1.toString());
     }
 }

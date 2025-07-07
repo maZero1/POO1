@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Catalogo {
     private String colecionador;
     private ArrayList<Item> itens;
+    private ArrayList<Jogo> jogos;
 
     public Catalogo(String colecionador){
         this.colecionador = colecionador;
@@ -19,13 +20,14 @@ public class Catalogo {
     public void removeItens(Item umItem){
         if(umItem != null){
             this.itens.remove(umItem);
-        }else{
-            System.out.println("Tentativa de remover um item que não existe");
         }
     }
+    public void addJogos(Jogo jogo){
+        this.jogos.add(jogo);
+    }
     public String toString() {
-        String texto = "Colecionado: " + this.colecionador;
-        texto += "Itens : \n";
+        String texto = "Colecionador: " + this.colecionador;
+        texto += "Itens: \n";
         for(Item it: itens){
             texto += it.toString();
             System.out.println();

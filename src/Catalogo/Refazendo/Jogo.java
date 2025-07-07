@@ -15,8 +15,6 @@ public class Jogo extends Item{
      public void setJogadores(int jogadores){
          if(jogadores > 0){
              this.jogadores = jogadores;
-         }else{
-             System.out.println("Tentativa de inserir N° jogadores negativo");
          }
      }
      public String getPlataforma(){
@@ -25,12 +23,10 @@ public class Jogo extends Item{
      public void setPlataforma(String plataforma){
          if(plataforma != null && plataforma.isEmpty()){
              this.plataforma = plataforma;
-         }else{
-             System.out.println("Tentativa de inserir plataforma vazia");
          }
      }
      @Override
      public String toString(){
-         return super.toString() + " N° Jogadores: " + jogadores + ", Plataforma: " + plataforma;
+         return super.toString() + ", N° Jogadores: " + jogadores + ", Plataforma: " + plataforma;
      }
 }

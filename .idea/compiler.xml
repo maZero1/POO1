@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="POO1" options="--add-exports java.base/sun.util.locale=ALL-UNNAMED" />
-    </option>
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/src/Catalogo/Refazendo/testeCatalogo1.java" />
+    </excludeFromCompile>
   </component>
 </project>

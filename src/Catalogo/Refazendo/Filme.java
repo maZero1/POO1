@@ -10,7 +10,7 @@ public class Filme extends Item{
     public String getDiretor(){
         return this.diretor;
     }
-    public void setDiretor(){
+    public void setDiretor(String diretor){
         if(diretor != null){
             this.diretor = diretor;
         }else{
