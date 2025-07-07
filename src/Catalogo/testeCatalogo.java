@@ -1,8 +1,7 @@
 package Catalogo;
+
 import org.junit.Test;
-
 import java.util.ArrayList;
-
 import static org.junit.Assert.assertEquals;
 
 public class testeCatalogo {
@@ -33,13 +32,10 @@ public class testeCatalogo {
         cat1.addItem(fil2);
         cat1.addItem(jog1);
         cat1.addItem(jog2);
-
         //obter os itens do catalogo
         ArrayList<Item> colecao = cat1.getItens();
-
         //verificar tamanho da lista
         assertEquals(6, colecao.size());
-
         //verificar conteudo da lista
         assertEquals(alb1, colecao.get(0));
         assertEquals(alb2, colecao.get(1));
@@ -47,5 +43,26 @@ public class testeCatalogo {
         assertEquals(fil2, colecao.get(3));
         assertEquals(jog1, colecao.get(4));
         assertEquals(jog2, colecao.get(5));
+    }
+    @Test
+    public void testeCenario(){
+        Catalogo cat2 = new Catalogo("Nicolas");
+        Album al1 = new Album("Deluxe", 100,"Surreal","Cjota", 15);
+        Album al2 = new Album("Nicolas", 60, "Até que bom", "Nicolas", 10);
+
+        Filme fil1 = new Filme("Reacher", 100, "Bom", "Mel Dick");
+        Filme fil2 = new Filme("Oreiudo", 130, "Grande", "Assrol");
+
+        Jogo jg1 = new Jogo("Ghost", 100, "Muito bom", 4, "Ps5");
+        Jogo jg2 = new Jogo("CS Go", 1000, "Muito bom", 1, "Steam");
+
+        cat2.addItem(al1);
+        cat2.addItem(al2);
+        cat2.addItem(fil1);
+        cat2.addItem(fil2);
+        cat2.addItem(jg1);
+        cat2.addItem(jg2);
+        ArrayList<Item> colecao = cat2.getItens();
+        assertEquals(6, colecao.size());
     }
 }
