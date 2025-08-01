@@ -1,7 +1,5 @@
 package GeminiQuestions.PessoasCasadas;
 
-import static sun.util.locale.LocaleUtils.isEmpty;
-
 public class Pessoa {
     private int anoNascimento;
     private String nome;

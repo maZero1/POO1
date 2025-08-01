@@ -1,5 +1,6 @@
 package FeitasEmSala.Catalogo;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Catalogo {
@@ -19,7 +20,6 @@ public class Catalogo {
     public String toString(){
         String texto = "Colecionador: "+this.colecionador+"\n";
         texto += "Itens: \n";
-
         for(Item it: itens) {
             texto += it.toString();
             System.out.println();

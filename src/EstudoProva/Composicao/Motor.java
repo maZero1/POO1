@@ -9,7 +9,6 @@ public class Motor {
         this.cilindradas = cilindradas;
         System.out.println("Motor " + tipo + " (" + cilindradas + "cc) criado.");
     }
-
     public void ligar() {
         System.out.println("Motor " + tipo + " ligando...");
     }

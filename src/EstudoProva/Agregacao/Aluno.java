@@ -8,11 +8,9 @@ public class Aluno {
         this.nome = nome;
         this.matricula = matricula;
     }
-
     public String getNome() {
         return nome;
     }
-
     @Override
     public String toString() {
         return "Aluno: " + nome + " (Mat: " + matricula + ")";

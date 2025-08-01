@@ -21,8 +21,8 @@ public class Turma {private String nomeDisciplina;
         if (alunos == null) {
             System.out.println("Nenhum aluno nesta turma.");
         } else {
-            for (Aluno aluno : alunos) {
-                System.out.println("- " + aluno);
+            for(Aluno aluno : alunos){
+                System.out.println(" ," + alunos);
             }
         }
     }
